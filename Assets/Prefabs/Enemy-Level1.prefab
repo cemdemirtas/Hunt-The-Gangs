@@ -767,6 +767,7 @@ MonoBehaviour:
   _moveSpeed: 10
   _healthBarImage: {fileID: 2520001609708834824}
   _enemySO: {fileID: 11400000, guid: 4d233514d06ced74f8c5c1b7d4a85c04, type: 2}
+  _towerSO: {fileID: 11400000, guid: 5ceb2647e834de84d8e5d9d4855274fa, type: 2}
 --- !u!195 &5686373341181802561
 NavMeshAgent:
   m_ObjectHideFlags: 0

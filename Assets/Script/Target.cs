@@ -12,6 +12,8 @@ public class Target : MonoBehaviour, IExplode
     private float totalHp;
     [SerializeField] private Image _healthBarImage;
     [SerializeField] private EnemySO _enemySO;
+    [SerializeField] private TowerSO _towerSO;
+
     public Rigidbody Rb => _rb;
 
 
@@ -27,9 +29,14 @@ public class Target : MonoBehaviour, IExplode
     }
     public void Explode()
     {
-        this.totalHp = this.totalHp - 50;
-        _healthBarImage.fillAmount = totalHp/100;
-        Debug.Log("Total HP" + totalHp);
-        if (totalHp <= 0) gameObject.SetActive(false);
+        totalHp = totalHp - 50;
+        _healthBarImage.fillAmount = totalHp / 100;
+        if (totalHp <= 0) kil();
+    }
+    void kil()
+    {
+        _towerSO.killCount++;
+        if (_towerSO.killCount >= 50) UIManager.UpgradePanelEvent?.Invoke();
+        gameObject.SetActive(false);
     }
 }

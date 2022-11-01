@@ -25,7 +25,7 @@ public class ShootingManager : MonoBehaviour
         //closestEnemy.GetNearestEnemy(transform);
         //var closest = closestEnemy.nearestEnemy;
 
-        if (/*Input.touchCount > 0 &&*/ elapsed >= 1f /*&& closestEnemy.nearestEnemy != null*/ /*&& UIManager.Instance._panelCount < 45*/)
+        if (/*Input.touchCount > 0 &&*/ elapsed >= 1f /*&& closestEnemy.nearestEnemy != null*/ && Shoot.Instance._bulletType != null)
         {
             shootEvent?.Invoke();
             elapsed = elapsed % 1;

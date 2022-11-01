@@ -15,14 +15,24 @@ public class Shoot : MonoBehaviour
     //[SerializeField] public Transform enemy;
     ShootingManager _shootingManager;
     //ClosestEnemy _closestEnemy;
-    [SerializeField] string _bulletType;
+    [SerializeField] public string _bulletType;
+    [SerializeField] BulletSO _bulletSO;
+    public static UnityAction ArrowCountEvent;
 
-    [SerializeField] List<Transform> _missileList;
 
+    private void OnEnable()
+    {
+        //_bulletType = UpgradeMechanic.bulletType;
+        ArrowCountEvent += ArrowCount;
+    }
+    private void OnDisable()
+    {
+        ArrowCountEvent -= ArrowCount;
+    }
     private void Awake()
     {
         if (Instance == null) { Instance = this; }
-
+        _bulletType = ((UpgradeMechanic.bulletEnum)(_bulletSO.ArrowType)).ToString();
         _shootingManager = GetComponent<ShootingManager>();
 
     }
@@ -30,8 +40,13 @@ public class Shoot : MonoBehaviour
     {
         //_bulletType = ((UpgradeSO.bulletTypeEnum)_upgradeSO.BulletCount).ToString();
         //Bullet_Forward_Force = _upgradeSO.BulletForwardSpeed;
-        GameObject Temporary_Bullet_Handler = PoolingManager.instance.SpawnFromPool("Arrow", BulletEmitter.transform.position, Quaternion.Euler(0,180,0));
+        GameObject Temporary_Bullet_Handler = PoolingManager.instance.SpawnFromPool(_bulletType, BulletEmitter.transform.position, Quaternion.Euler(0, 180, 0));
         Temporary_Bullet_Handler.SetActive(true);
+    }
+    public void ArrowCount()
+    {
+        _bulletType = ((UpgradeMechanic.bulletEnum)(_bulletSO.ArrowType)).ToString();
+        Debug.Log("" + Shoot.Instance._bulletType);
     }
 
 }
