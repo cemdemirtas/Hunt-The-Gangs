@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16dfa849ca9db5a47b84c1bffaacf9e2, type: 3}
-  m_Name: TowerSO
+  m_Script: {fileID: 11500000, guid: 7422d32a7dbe832478833a1d987c58c9, type: 3}
+  m_Name: Enemy-Level2
   m_EditorClassIdentifier: 
-  towerCount: 4
-  killCount: 47
+  speed: 2
+  Health: 250
+  Damage: 10

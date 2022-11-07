@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16dfa849ca9db5a47b84c1bffaacf9e2, type: 3}
-  m_Name: TowerSO
+  m_Script: {fileID: 11500000, guid: 4bdf6d2dd1ec2f74c8771e1b5f7c288e, type: 3}
+  m_Name: LevelSO
   m_EditorClassIdentifier: 
-  towerCount: 4
-  killCount: 47
+  levelIndex: 3
+  spawnList:
+  - {fileID: 0}
+  EnemyList: []

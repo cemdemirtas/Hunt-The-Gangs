@@ -19,7 +19,7 @@ public class Target : MonoBehaviour, IExplode
 
     private void OnEnable()
     {
-        totalHp = 100;
+        totalHp = _enemySO.Health;
         //totalHp = _enemySO.Health;
     }
     void Update()
@@ -30,7 +30,7 @@ public class Target : MonoBehaviour, IExplode
     public void Explode()
     {
         totalHp = totalHp - 50;
-        _healthBarImage.fillAmount = totalHp / 100;
+        _healthBarImage.fillAmount = totalHp / _enemySO.Health;
         if (totalHp <= 0) kil();
     }
     void kil()

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396980da9a4a75e4e8f20f8ee384fdf8, type: 3}
   m_Name: BulletSO
   m_EditorClassIdentifier: 
-  ArrowType: 1
+  ArrowType: 3

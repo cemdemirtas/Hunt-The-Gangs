@@ -38,8 +38,6 @@ public class Shoot : MonoBehaviour
     }
     public void Fire(ShootingManager shootingManager)
     {
-        //_bulletType = ((UpgradeSO.bulletTypeEnum)_upgradeSO.BulletCount).ToString();
-        //Bullet_Forward_Force = _upgradeSO.BulletForwardSpeed;
         GameObject Temporary_Bullet_Handler = PoolingManager.instance.SpawnFromPool(_bulletType, BulletEmitter.transform.position, Quaternion.Euler(0, 180, 0));
         Temporary_Bullet_Handler.SetActive(true);
     }
